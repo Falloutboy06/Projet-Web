@@ -1,0 +1,19 @@
+body{
+    background-color:whitesmoke;
+    background-image: url(./background.png);
+    background-position: center;
+    margin: 0;
+	padding: 0;
+}
+h1{
+    color: black;
+    font-size: 150px;
+    font-family: Cambria ;
+    text-align: center;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    background-image: url(./metal.jfif);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
