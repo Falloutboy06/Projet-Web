@@ -4,11 +4,11 @@
             <link rel="stylesheet" href="SignUp.css">
         </head>
         <body>
-            <h1><a id="titre" href="./Accueil.html">Metal Fest</a></h1>
+            <h1><a id="titre" href="./Accueil.php">Metal Fest</a></h1>
             <table id="tab">
                 <tr>
-                    <td><a href="./SignUp.html">Inscription</a></td>
-                    <td><a href="./LogIn.html">Connexion</a></td>
+                    <td><a href="./SignUp.php">Inscription</a></td>
+                    <td><a href="./LogIn.php">Connexion</a></td>
                     <td>Lien 3</td>
                     <td>Lien 4</td>
                 </tr>
@@ -30,7 +30,7 @@
                     </p>
                 </form>
             
-
+                <?php echo date('d/m/Y h:i:s'); ?>
         </body>
-
+        <?php echo date('d/m/Y h:i:s'); ?>
 </html>
