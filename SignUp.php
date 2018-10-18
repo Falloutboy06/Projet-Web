@@ -1,6 +1,6 @@
 <html>
         <head>
-            <title>Accueil Metal Fest</title>
+            <title>SignUp Metal Fest</title>
             <link rel="stylesheet" href="SignUp.css">
         </head>
         <body>
@@ -9,8 +9,8 @@
                 <tr>
                     <td><a href="./SignUp.php">Inscription</a></td>
                     <td><a href="./LogIn.php">Connexion</a></td>
-                    <td>Lien 3</td>
-                    <td>Lien 4</td>
+                    <td><a href="./Event.php">Evenements</td>
+                    <td><a href="./CreateEvent.php">Creer un évènement</td>
                 </tr>
             </table>
             <img id="image1" src="./bande_noir.jpeg">
@@ -29,8 +29,6 @@
                         <input type="submit" value="Inscription"/>
                     </p>
                 </form>
-            
-                <?php echo date('d/m/Y h:i:s'); ?>
+                <?php echo date('d/m/Y h:i:s');?>
         </body>
-        <?php echo date('d/m/Y h:i:s'); ?>
 </html>

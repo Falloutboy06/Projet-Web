@@ -1,7 +1,7 @@
 <html>
         <head>
-            <title>Accueil Metal Fest</title>
-            <link rel="stylesheet" href="Accueil.css">
+            <title>CreateEvent Metal Fest</title>
+            <link rel="stylesheet" href="CreateEvent.css">
         </head>
         <body>
                 <h1 ><a id="titre" href="./Accueil.php">Metal Fest</a></h1>
