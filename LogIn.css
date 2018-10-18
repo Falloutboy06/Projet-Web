@@ -56,12 +56,17 @@ input{
     color :black;
 }
 a{
-    color :black;
+    color:white;
     text-decoration:none;
     font-family: Cambria ;
 }
-a:hover {
+a:hover,#titre:hover {
     color:red;
     text-decoration:underline;
     font-family: Cambria ;
     }
+#titre{
+    color:black;
+    text-decoration:none;
+    font-family: Cambria ;
+}
