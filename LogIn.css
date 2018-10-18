@@ -28,6 +28,12 @@ h1{
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
+#cpt{
+    font-size: 50px;
+    font-family: Cambria ;
+    text-align: center;
+    color :black;
+}
 #image1{
     float:left;
     width: 10%;
@@ -38,9 +44,19 @@ h1{
     width: 10%;
     height: 100% ;
 }
-
+label{
+    font-size: 50px;
+    font-family: Cambria ;
+    text-align: center;
+    color :black;
+}
+input{
+    font-size: 50px;
+    font-family: Cambria ;
+    color :black;
+}
 a{
-    color:white;
+    color :black;
     text-decoration:none;
     font-family: Cambria ;
 }
@@ -49,8 +65,3 @@ a:hover {
     text-decoration:underline;
     font-family: Cambria ;
     }
-a h1{
-    color:black;
-    text-decoration:none;
-    font-family: Cambria ;
-}
