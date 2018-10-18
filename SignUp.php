@@ -29,8 +29,6 @@
                         <input type="submit" value="Inscription"/>
                     </p>
                 </form>
-            
-                <?php echo date('d/m/Y h:i:s'); ?>
+                <?php echo date('d/m/Y h:i:s');?>
         </body>
-        <?php echo date('d/m/Y h:i:s'); ?>
 </html>

@@ -17,6 +17,6 @@
             <img id="image2" src="./bande_noir.jpeg">
             
             <?php echo date('d/m/Y h:i:s'); ?>
+
         </body>
-        <?php echo date('d/m/Y h:i:s'); ?>
 </html>

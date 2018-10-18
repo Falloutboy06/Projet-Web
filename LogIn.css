@@ -47,6 +47,7 @@ h1{
 label{
     font-size: 50px;
     font-family: Cambria ;
+    float:center;
     text-align: center;
     color :black;
 }
