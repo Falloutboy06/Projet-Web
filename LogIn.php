@@ -17,14 +17,42 @@
             <img id="image2" src="./bande_noir.jpeg">
             <h4 id="cpt"><a href="./SignUp.php">Vous n'avez pas de compte ?</a></h4>
 
-            <form method="POST" action="./index.php">
+            <form method="POST" action="LogIn.php">
                 <p>
                     <label for="pseudo">Nom d'utilisateur</label>: <input type="text" name="pseudo" id"pseudo"/><br>
                     <label for="MDP">Mot de passe</label>: <input type="password" name="MDP" id"MDP"/><br>
                     <input type="submit" value="Connexion">
                 </p>
             </form>
-            <?php echo date('d/m/Y h:i:s'); ?>
+            <?php
+try
+{
+$bdd= new PDO('mysql:host=localhost;dbname=testweb;charset=utf8','root','');
+}
+catch(Exception $e)
+{
+    die('Erreur:'.$e->getMessage());
+}
+$reponse=$bdd->query(' SELECT*FROM user');
+foreach($reponse as $row)
+{
+    if(isset($_POST["name"]) AND isset($_POST["password"])){
+        if($_POST["name"]==$row["name"]){
+            if($_POST["name"]==$row["name"]){
+                header('Location :./Accueil.php');
+                echo 'Bien joué' ;
+            }
+            else{
+            echo 'Wrong password' ;
+            }
+        }
+        else{
+            echo 'Wrong username' ;
+        }
+    }
+}
+?>
 
         </body>
 </html>
+
