@@ -2,8 +2,6 @@ body{
     background-color:whitesmoke;
     background-image: url(./background.png);
     background-position: center;
-    margin: 0;
-	padding: 0;
 }
 h1{
     color: black;
@@ -16,8 +14,14 @@ h1{
     background-image: url(./metal.jfif);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    padding: 0%;
-    margin: 0%;
+    margin: 0;
+	padding: 0;
+}
+h2{
+    color: White;
+    font-size: 100px;
+    font-family: Cambria ;
+    text-align: center;
 }
 #tab{
     height: 10% ;
@@ -26,7 +30,6 @@ h1{
     color: white;
     font-family: Cambria ;
     text-align: center;
-    border-width: 5px;
     background-image: url(./bande_noir.jpeg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -41,30 +44,30 @@ h1{
     width: 10%;
     height: 100% ;
 }
-label{
-    font-size: 30px;
-    font-family: 'Franklin Gothic Medium';
+#image3{
     float:center;
-    text-align: center;
-    color :white;
+    align-items: center;
+    width: 25%;
+    height: 25% ;
 }
-input{
-    font-size: 30px;
-    font-family: Cambria ;
-    color :white;
-}
+
 a{
     color:white;
     text-decoration:none;
     font-family: Cambria ;
 }
 a:hover,#titre:hover {
-    color:white;
+    color:Black;
     text-decoration:none;
     font-family: Cambria ;
     }
 #titre{
-    color:black;
+    color:white;
     text-decoration:none;
     font-family: Cambria ;
 }
+#welcome{
+    font-family: Cambria ;
+    text-align: center;
+}
+

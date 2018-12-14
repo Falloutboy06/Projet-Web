@@ -1,27 +1,20 @@
-<?php
-try
-{
-$bdd= new PDO('mysql:host=localhost;dbname=testweb;charset=utf8','root','');
-}
-catch(Exception $e)
-{
-    die('Erreur:'.$e->getMessage());
-}
-$reponse=$bdd->query(' SELECT*FROM user');
-foreach($reponse as $row)
-{
-    if(isset($_POST["name"]) AND isset($_POST["password"])){
-        if($_POST["name"]==$row["name"]){
-            if($_POST["name"]==$row["name"]){
-                header('Location :./Accueil.php');
-            }
-            else{
-            echo 'Wrong password' ;
-            }
-        }
-        else{
-            echo 'Wrong username' ;
-        }
-    }
-}
-?>
+<html>
+        <head>
+            <title>Accueil Metal Fest</title>
+            <link rel="stylesheet" href="index.css">
+        </head>
+        <body>
+                <?php include('./header.php'); ?>
+            <table id="tab">
+                <tr>
+                    <td><a href="./SignUp.php">Inscription</a></td>
+                    <td><a href="./LogIn.php">Connexion</a></td>
+                    <td><a href="./Event.php">Evenements</td>
+                    <td><a href="./CreateEvent.php">Creer un evenement</td>
+                </tr>
+            </table>
+            <img id="image1" src="./bande_noir.jpeg">
+            <img id="image2" src="./bande_noir.jpeg">
+
+        </body>
+</html>
