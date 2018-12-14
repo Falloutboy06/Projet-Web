@@ -22,7 +22,7 @@
                     <label for="AGE">Age</label>: <input type:"text" name="AGE" id"AGE"/><br>
                     <label for="ADRESSE">E-mail</label>: <input type:"text" name="Mail" id"Mail"/><br>
                     <label for="GenreM">Homme</label>: <input type="radio" name="genre" id="GenreM"/>
-                    <label for="GenreF">Femme</label>: <input type="radio" name="genre" id="GenreF"/>
+                    <label for="GenreF">Femme</label>: <input type="radio" name="genre" id="GenreF"/><br>
                     <input type="submit" value="Inscription"/>
                 </p>
             </form>
