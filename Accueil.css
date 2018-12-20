@@ -1,0 +1,56 @@
+body{
+    background-color:whitesmoke;
+    background-image: url(./background.png);
+    background-position: center;
+    margin: 0;
+	padding: 0;
+}
+h1{
+    color: black;
+    font-size: 150px;
+    font-family: Cambria ;
+    text-align: center;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    background-image: url(./metal.jfif);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#tab{
+    height: 10% ;
+    width: 100%;
+    font-size: 40px;
+    color: white;
+    font-family: Cambria ;
+    text-align: center;
+    background-image: url(./bande_noir.jpeg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#image1{
+    float:left;
+    width: 10%;
+    height: 100% ;
+}
+#image2{
+    float:right;
+    width: 10%;
+    height: 100% ;
+}
+
+a{
+    color:white;
+    text-decoration:none;
+    font-family: Cambria ;
+}
+a:hover,#titre:hover {
+    color:red;
+    text-decoration:underline;
+    font-family: Cambria ;
+    }
+#titre{
+    color:black;
+    text-decoration:none;
+    font-family: Cambria ;
+}

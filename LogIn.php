@@ -1,4 +1,5 @@
 <html>
+<?php session_start() ?>
         <head>
             <title>LogIn Metal Fest</title>
             <link rel="stylesheet" href="LogIn.css">
@@ -26,19 +27,24 @@
             </form>
 <?php
     if( isset($_POST["pseudo"]) AND isset($_POST["MDP"]) AND $_POST["pseudo"] != "" AND $_POST["MDP"] != "" ) {
-        $name = $_POST["pseudo"];
+        $username = $_POST["pseudo"];
         $password = $_POST["MDP"];
         
         try {
-            $bdd= new PDO('mysql:host=localhost;dbname=testweb;charset=utf8','root','');
+            $bdd= new PDO('mysql:host=localhost;dbname=projet_web;charset=utf8','root','');
         }
         catch(Exception $e) {
             die('Erreur:'.$e->getMessage());
         }
-        $sql = "SELECT name, password FROM user WHERE name='".$name."' AND password='".$password."';";
+        $sql = "SELECT name, password, userID FROM user WHERE name='".$username."' AND password='".$password."';";
         $reponse=$bdd->query($sql);
         if($reponse->rowCount() == 1) {
-            header("Location: index.php");
+            foreach($reponse as $row){
+                $_SESSION['userID']= $row['userID'];
+                $_SESSION['LoggedIn']=true;
+                header("Location: index.php");
+            }
+          
         } else {
             echo "Wrong username or Password";
         }
@@ -46,7 +52,6 @@
         echo "Nom d'utilisateur et/ou mot de passe manquant";
         die();
     }
-    
 ?>
         </body>
 </html>

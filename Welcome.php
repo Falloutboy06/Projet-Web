@@ -1,4 +1,5 @@
 <html>
+    <?php session_start(); ?>
         <head>
             <title>Welcome Metal Fest</title>
             <link rel="stylesheet" href="Welcome.css">
@@ -18,7 +19,9 @@
             <h2 id="welcome">Bienvenue</h2>
             <img id="image3" src="./welcome.jpg">
             
-            <?php echo date('d/m/Y h:i:s'); ?>
+            <?php
+                echo $_SESSION['userID'];
+            ?>
 
         </body>
 </html>

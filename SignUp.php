@@ -1,4 +1,5 @@
 <html>
+    <?php session_start() ?>
         <head>
             <title>SignUp Metal Fest</title>
             <link rel="stylesheet" href="SignUp.css">
@@ -15,16 +16,42 @@
             </table>
             <img id="image1" src="./bande_noir.jpeg">
             <img id="image2" src="./bande_noir.jpeg">
-            <form method="POST" >
+            <form method="POST" action="SignUp.php" >
                 <p>
-                    <label for="pseudo">Nom d'utilisateur</label>: <input type:"text" name="pseudo" id"pseudo"/><br>
-                    <label for="Mot de passe">Mot de passe</label>: <input type:"text" name="MDP" id"MDP"/><br>
-                    <label for="AGE">Age</label>: <input type:"text" name="AGE" id"AGE"/><br>
-                    <label for="ADRESSE">E-mail</label>: <input type:"text" name="Mail" id"Mail"/><br>
-                    <label for="GenreM">Homme</label>: <input type="radio" name="genre" id="GenreM"/>
-                    <label for="GenreF">Femme</label>: <input type="radio" name="genre" id="GenreF"/><br>
+                    <label for="pseudo">Nom d'utilisateur</label>: <input type="text" name="pseudo" id"pseudo"required=""/><br>
+                    <label for="Mdp">Mot de passe</label>: <input type="password" name="MDP" id"MDP"required=""/><br>
+                    <label for="AGE">Age</label>: <input type:"text" name="AGE" id"AGE"required=""/><br>
+                    <label for="Mail">E-mail</label>: <input type:"text" name="Mail" id"Mail"required=""/><br>
                     <input type="submit" value="Inscription"/>
                 </p>
             </form>
+<?php
+         if( isset($_POST["pseudo"]) AND isset($_POST["MDP"])AND isset($_POST['AGE'])AND isset($_POST['Mail']) AND $_POST["pseudo"] != "" AND $_POST["MDP"] != "" AND $_POST["AGE"] != "" AND $_POST['Mail']!="") {
+
+            $username=$_POST['pseudo'];
+            $password=$_POST['MDP'];
+            $age=$_POST['AGE'];
+            $email=$_POST['Mail'];
+
+            try {
+                $bdd= new PDO('mysql:host=localhost;dbname=projet_web;charset=utf8','root','');
+            }
+            catch(Exception $e) {
+                die('Erreur:'.$e->getMessage());
+            }
+            $sql = "SELECT name FROM user WHERE name='".$username."'";
+            $reponse=$bdd->query($sql);
+            if($reponse->rowCount() == 0) 
+            {
+                $sql2 = "INSERT INTO `user` (`userID`, `name`, `password`, `age`, `mail`) VALUES (NULL, '".$username. "', '". $password. "', '".$age. "', '".$email. "')";
+                $bdd->exec($sql2);
+                header("Location: Welcome.php");      
+            }
+            else
+            {
+                echo("Nom d'utilisateur deja utilisé");
+            }
+        }
+?>
         </body>
 </html>

@@ -1,4 +1,5 @@
 <html>
+    <?php session_start();?>
         <head>
             <title>Event Metal Fest</title>
             <link rel="stylesheet" href="Event.css">
@@ -16,7 +17,10 @@
             <img id="image1" src="./bande_noir.jpeg">
             <img id="image2" src="./bande_noir.jpeg">
 
-            
+            <?php
+                session_start();
+                echo $_SESSION['userID'];
+            ?>
 
         </body>
 </html>
