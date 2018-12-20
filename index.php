@@ -11,7 +11,8 @@
                     <td><a href="./SignUp.php">Inscription</a></td>
                     <td><a href="./LogIn.php">Connexion</a></td>
                     <td><a href="./Event.php">Evenements</td>
-                    <td><a href="./CreateEvent.php">Creer un evenement</td>
+                    <td><a href="./CreateEvent.php">Creer un évènement</td>
+                    <?php if($_SESSION['LoggedIn']==1){include('./DecoButton.php');}?>
                 </tr>
             </table>
             <img id="image1" src="./bande_noir.jpeg">

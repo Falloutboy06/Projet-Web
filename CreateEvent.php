@@ -11,7 +11,8 @@
                     <td><a href="./SignUp.php">Inscription</a></td>
                     <td><a href="./LogIn.php">Connexion</a></td>
                     <td><a href="./Event.php">Evenements</td>
-                    <td><a href="./CreateEvent.php">Creer un evenement</td>
+                    <td><a href="./CreateEvent.php">Creer un évènement</td>
+                    <?php if($_SESSION['LoggedIn']==1){include('./DecoButton.php');}?>
                 </tr>
             </table>
             <img id="image1" src="./bande_noir.jpeg">
@@ -49,7 +50,8 @@
                 if($reponse->rowCount() == 0) 
                 {
                     $sql2 = "INSERT INTO `user`('ID_Festival','ID_Crea',`Titre`, `Festival`, `DateDebut`, `DateFin`, `Info`) VALUES (Null,$_SESSION[userID],'".$Titre. "', '". $Fest. "', '".$Dbegin. "', '".$Dend."','".$info."')";
-                    $bdd->exec($sql2);     
+                    $bdd->exec($sql2); 
+                    header("Location: Event.php");   
                 }
                 
             }

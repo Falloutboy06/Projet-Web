@@ -11,7 +11,7 @@
                     <td><a href="./SignUp.php">Inscription</a></td>
                     <td><a href="./LogIn.php">Connexion</a></td>
                     <td><a href="./Event.php">Evenements</td>
-                <td><a href="./CreateEvent.php">Creer un évènement</td>
+                    <td><a href="./CreateEvent.php">Creer un évènement</td>
                 </tr>
             </table>
             <img id="image1" src="./bande_noir.jpeg">
@@ -41,7 +41,7 @@
         if($reponse->rowCount() == 1) {
             foreach($reponse as $row){
                 $_SESSION['userID']= $row['userID'];
-                $_SESSION['LoggedIn']=true;
+                $_SESSION['LoggedIn']=1;
                 header("Location: index.php");
             }
           
