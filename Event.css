@@ -58,12 +58,12 @@ input{
     font-family: Cambria ;
     color :black;
 }
-a{
+.barre{
     color:white;
     text-decoration:none;
     font-family: Cambria ;
 }
-a:hover,#titre:hover {
+.barre:hover,#titre:hover {
     color:white;
     text-decoration:none;
     font-family: Cambria ;

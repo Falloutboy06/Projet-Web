@@ -49,14 +49,13 @@ h2{
     width: 25%;
     height: 25% ;
 }
-
-a{
+.barre{
     color:white;
     text-decoration:none;
     font-family: Cambria ;
 }
-a:hover,#titre:hover {
-    color:Black;
+.barre:hover,#titre:hover {
+    color:white;
     text-decoration:none;
     font-family: Cambria ;
     }

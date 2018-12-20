@@ -1,1 +1,1 @@
-<td><a href="./Deconnexion.php">Deconnexion</td>
+<td><a class="barre"href="./Deconnexion.php">Deconnexion</td>

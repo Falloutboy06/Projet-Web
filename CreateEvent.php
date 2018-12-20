@@ -8,10 +8,10 @@
         <?php include('./header.php');?>
             <table id="tab">
                 <tr>
-                    <td><a href="./SignUp.php">Inscription</a></td>
-                    <td><a href="./LogIn.php">Connexion</a></td>
-                    <td><a href="./Event.php">Evenements</td>
-                    <td><a href="./CreateEvent.php">Creer un évènement</td>
+                    <td><a class="barre" href="./SignUp.php">Inscription</a></td>
+                    <td><a class="barre"href="./LogIn.php">Connexion</a></td>
+                    <td><a class="barre" href="./Event.php">Evenements</td>
+                    <td><a class="barre" href="./CreateEvent.php">Creer un évènement</td>
                     <?php if($_SESSION['LoggedIn']==1){include('./DecoButton.php');}?>
                 </tr>
             </table>
@@ -20,16 +20,27 @@
         <?php
             echo ($_SESSION['userID']);
         ?>
-            <form method="POST"action="CreateEvent.php">
-                <p>
-                    <label for="Titre">Nom de l'evenement</label>:<input type="text" name="titre" id"titre"required=""/><br>
-                    <label for="Festival">Festival</label>:<input type="text" name="fest" id"fest"required=""/><br>
-                    <label for="DateDebut">Date de Debut</label>:<input type="date" name="begin" id"begin"required=""/><br>
-                    <label for="DateFin">Date de Fin</label>: <input type="date" name="end" id"end"required=""/><br>
-                    <label for="info">Information</label>:<input type="textbox" name="info" id"info"required=""/><br>
-                    <input type="submit" value="Creer evenement"/>
-                </p>
-            </form>
+            <?php if($_SESSION['LoggedIn']==1){?>
+                <form method="POST"action="CreateEvent.php">
+                    <p>
+                        <label for="Titre">Nom de l'evenement</label>:<input type="text" name="titre" id"titre"required=""/><br>
+                        <label for="Festival">Festival</label>:<input type="text" name="fest" id"fest"required=""/><br>
+                        <label for="DateDebut">Date de Debut</label>:<input type="date" name="begin" id"begin"required=""/><br>
+                        <label for="DateFin">Date de Fin</label>: <input type="date" name="end" id"end"required=""/><br>
+                        <label for="info">Information</label>:<input type="textbox" name="info" id"info"required=""/><br>
+                        <input type="submit" value="Creer evenement"/>
+                    </p>
+                </form>
+            <?php
+            }
+            else 
+            {
+            ?>
+                <h2>Vous n'ètes pas connecté</h2>
+                <h3><a id="lien" href="./LogIn.php">Connexion</a></h3>
+            <?php
+            }
+            ?>
             <?php
             if( isset($_POST["Titre"]) AND isset($_POST["Festival"])AND isset($_POST['DateDebut'])AND isset($_POST['DateFin'])AND isset($_POST['info']) AND $_POST["Titre"] != "" AND $_POST["Festival"] != "" AND $_POST["DateDebut"] != "" AND $_POST['DateFin']!=""AND $_POST['info']!="") {
 
@@ -49,9 +60,13 @@
                 $reponse=$bdd->query($sql);
                 if($reponse->rowCount() == 0) 
                 {
-                    $sql2 = "INSERT INTO `user`('ID_Festival','ID_Crea',`Titre`, `Festival`, `DateDebut`, `DateFin`, `Info`) VALUES (Null,$_SESSION[userID],'".$Titre. "', '". $Fest. "', '".$Dbegin. "', '".$Dend."','".$info."')";
+                    $sql2 = "INSERT INTO `event` (`ID_Festival`, `ID_Crea`, `Titre`, `Festival`, `DateDebut`, `DateFin`, `Info`) VALUES (Null,$_SESSION[userID],'".$Titre. "', '". $Fest. "', '".$Dbegin. "', '".$Dend."','".$info."');";
                     $bdd->exec($sql2); 
                     header("Location: Event.php");   
+                }
+                else
+                {
+                    echo("Evènement déja créé");
                 }
                 
             }
