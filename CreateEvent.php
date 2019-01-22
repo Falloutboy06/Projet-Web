@@ -5,7 +5,14 @@
             <link rel="stylesheet" href="CreateEvent.css">
         </head>
         <body>
-        <?php include('./header.php');?>
+        <?php include('./header.php');
+            try {
+                $bdd= new PDO('mysql:host=localhost;dbname=projet_web;charset=utf8','root','');
+            }
+            catch(Exception $e) {
+                die('Erreur:'.$e->getMessage());
+            }
+        ?>
             <table id="tab">
                 <tr>
                     <td><a class="barre" href="./SignUp.php">Inscription</a></td>
@@ -32,6 +39,28 @@
                     </p>
                 </form>
             <?php
+                if( isset($_POST["Titre"]) AND isset($_POST["Festival"])AND isset($_POST['DateDebut'])AND isset($_POST['DateFin'])
+                AND isset($_POST['info']) AND $_POST["Titre"] != "" AND $_POST["Festival"] != "" AND $_POST["DateDebut"] != "" AND $_POST['DateFin']!=""AND $_POST['info']!="") {
+                    $Titre=$_POST['Titre'];
+                    $Fest=$_POST['Festival'];
+                    $Dbegin=$_POST['DateDebut'];
+                    $Dend=$_POST['DateFin'];
+                    $info=$_POST['info'];
+
+                    $sql = "SELECT Titre FROM event WHERE Titre='".$Titre."'";
+                    $reponse=$bdd->query($sql);
+                    if($reponse->rowCount() == 0) 
+                    {
+                        $sql3 = "INSERT INTO 'event'('ID_Festival', 'ID_Crea','Titre','Festival','DateDebut','DateFin','Info') VALUES (NULL,NULL,".$Titre.", ".$Fest.", ".$Dbegin.", ".$Dend.", ".$info.")";
+                        $bdd->exec($sql3); 
+                        header("Location: Event.php");   
+                    }
+                    else
+                    {
+                        echo("Evènement déja créé");
+                    }
+                    
+                }
             }
             else 
             {
@@ -41,35 +70,5 @@
             <?php
             }
             ?>
-            <?php
-            if( isset($_POST["Titre"]) AND isset($_POST["Festival"])AND isset($_POST['DateDebut'])AND isset($_POST['DateFin'])AND isset($_POST['info']) AND $_POST["Titre"] != "" AND $_POST["Festival"] != "" AND $_POST["DateDebut"] != "" AND $_POST['DateFin']!=""AND $_POST['info']!="") {
-
-                $Titre=$_POST['Titre'];
-                $Fest=$_POST['Festival'];
-                $Dbegin=$_POST['DateDebut'];
-                $Dend=$_POST['DateFin'];
-                $info=$_POST['info'];
-
-                try {
-                    $bdd= new PDO('mysql:host=localhost;dbname=projet_web;charset=utf8','root','');
-                }
-                catch(Exception $e) {
-                    die('Erreur:'.$e->getMessage());
-                }
-                $sql = "SELECT Titre FROM event WHERE Titre='".$Titre."'";
-                $reponse=$bdd->query($sql);
-                if($reponse->rowCount() == 0) 
-                {
-                    $sql2 = "INSERT INTO `event` (`ID_Festival`, `ID_Crea`, `Titre`, `Festival`, `DateDebut`, `DateFin`, `Info`) VALUES (Null,$_SESSION[userID],'".$Titre. "', '". $Fest. "', '".$Dbegin. "', '".$Dend."','".$info."');";
-                    $bdd->exec($sql2); 
-                    header("Location: Event.php");   
-                }
-                else
-                {
-                    echo("Evènement déja créé");
-                }
-                
-            }
-?>
         </body>
 </html>

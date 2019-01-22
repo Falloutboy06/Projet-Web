@@ -6,7 +6,8 @@
         catch(Exception $e) {
             die('Erreur:'.$e->getMessage());
         }  
-        $SQL ="SELECT event.ID_Festival as IDF,event.Titre as Titre,user.name as createur, event.Festival as Fest,event.DateDebut as DD, event.DateFin as DF,event.Info as Info FROM event INNER JOIN user ON ID_Crea = user.userID";
+        $SQL ="SELECT event.ID_Festival as IDF,event.Titre as Titre,user.name as createur, event.Festival as Fest,event.DateDebut as DD, 
+                      event.DateFin as DF,event.Info as Info FROM event INNER JOIN user ON ID_Crea = user.userID";
         $reponse=$bdd->query("$SQL");
         ?>
         <head>

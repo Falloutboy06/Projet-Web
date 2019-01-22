@@ -26,7 +26,8 @@
                 </p>
             </form>
 <?php
-         if( isset($_POST["pseudo"]) AND isset($_POST["MDP"])AND isset($_POST['AGE'])AND isset($_POST['Mail']) AND $_POST["pseudo"] != "" AND $_POST["MDP"] != "" AND $_POST["AGE"] != "" AND $_POST['Mail']!="") {
+         if( isset($_POST["pseudo"]) AND isset($_POST["MDP"])AND isset($_POST['AGE'])AND isset($_POST['Mail']) AND $_POST["pseudo"] != "" 
+                                     AND $_POST["MDP"] != "" AND $_POST["AGE"] != "" AND $_POST['Mail']!="") {
 
             $username=$_POST['pseudo'];
             $password=$_POST['MDP'];
