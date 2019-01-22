@@ -6,7 +6,7 @@
         catch(Exception $e) {
             die('Erreur:'.$e->getMessage());
         }  
-        $SQL ="SELECT event.ID_Festival as IDF,event.Titre as Titre,user.name as createur, event.Festival as Fest,event.DateDebut as DD, 
+        $SQL ="SELECT event.ID_Festival as IDF,event.Titre as Titre,user.name as createur,user.mail as email,event.Festival as Fest,event.DateDebut as DD, 
                       event.DateFin as DF,event.Info as Info FROM event INNER JOIN user ON ID_Crea = user.userID";
         $reponse=$bdd->query("$SQL");
         ?>
@@ -41,6 +41,10 @@
                             <h2> Date de Debut </h2> <?php  echo $row['DD'] ?></br>
                             <h2> Date de Fin </h2> <?php  echo $row['DF'] ?></br>
                             <h2> Informations </h2> <?php  echo $row['Info'] ?></br>
+                            <?php 
+                                $_SESSION['Email']=$row['email'];
+                                if($_SESSION['LoggedIn']==1){ ?> <a class="contact"href="./Contact.php">Contacter le createur </br> 
+                            <?php}?>
                         </p>
                     <?php
                     }
