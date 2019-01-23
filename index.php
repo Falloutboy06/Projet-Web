@@ -26,5 +26,10 @@
             echo $_SESSION['userID'];
             ?>
 
+                <p>Bienvenue sur Metal Fest !</p>
+                <p>Un site fait par des métalleux pour des métalleux</p>
+                <p>Sur Metal Fest rencontrez des métalleux du monde entier</p>
+                <p>organisez vos voyages et partagez vos souvenirs</p>
+            
         </body>
 </html>

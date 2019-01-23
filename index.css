@@ -56,3 +56,10 @@ h1{
     text-decoration:none;
     font-family: Cambria ;
 }
+p{
+    color:white;
+    font-size: 70px;
+    text-decoration:solid;
+    font-family: 'Franklin Gothic Medium' ;
+    text-align: center;
+}
