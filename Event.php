@@ -10,8 +10,8 @@
                 <tr>
                     <td><a class="barre" href="./SignUp.php">Inscription</a></td>
                     <td><a class="barre" href="./LogIn.php">Connexion</a></td>
-                    <td><a class="barre" href="./Event.php">Evenements</td>
-                    <td><a class="barre" href="./CreateEvent.php">Creer un évènement</td>
+                    <td><a class="barre" href="./Event.php">Evenements</a></td>
+                    <td><a class="barre" href="./CreateEvent.php">Creer un évènement</a></td>
                     <?php if($_SESSION['LoggedIn']==1){
                         include('./DecoButton.php');
                         include('./ProfilButton.php');
@@ -21,12 +21,10 @@
             </table>
             <img class="image1" src="./bande_noir.jpeg">
             <img class="image2" src="./bande_noir.jpeg">
-            
             <div id="event">
                     <?php
                         try {
                             $bdd= new PDO('mysql:host=localhost;dbname=projet_web;charset=utf8','root','');
-                            echo("BDD ouverte");
                         }
                         catch(Exception $e) {
                             die('Erreur:'.$e->getMessage());
@@ -46,9 +44,12 @@
                             <h2> Date de Fin </h2> <?php  echo $row['DF'] ?></br>
                             <h2> Informations </h2> <?php  echo $row['Info'] ?></br>
                             <?php 
-                                $_SESSION['Email']=$row['email'];
-                                if($_SESSION['LoggedIn']==1){ ?> <a class="contact" href="./Contact.php">Contacter le createur </br> 
-                            <?php}?>
+                                $SQL2 = "SELECT mail from user where userID=ID_crea";
+                                $reponse2=$bdd->query("$SQL2");
+                                $_SESSION['email']=$reponse2; 
+                                if($_SESSION['LoggedIn']==1){include('./ContactButton.php');}
+                            ?>
+                            <h2> ------------------------------------------------------------------------------ </h2></br>
                         </p>
                     <?php
                     }
