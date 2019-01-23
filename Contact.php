@@ -18,7 +18,8 @@
             <img class="image1" src="./bande_noir.jpeg">
             <img class="image2" src="./bande_noir.jpeg">
 
-            <?php echo $_SESSION ['email'];?>
+            <h2>Mail du créateur de l'annonce</h2>
+            <h2><?php echo $_SESSION ['email'];?></h2>
 
         </body>
 </html>

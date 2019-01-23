@@ -1,0 +1,111 @@
+body{
+    background-color:whitesmoke;
+    background-image: url(./background.png);
+    background-position: center;
+    margin: 0;
+	padding: 0;
+}
+h1{
+    color: black;
+    font-size: 150px;
+    font-family: Cambria ;
+    text-align: center;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    background-image: url(./metal.jfif);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 0%;
+    margin: 0%;
+}
+#tab{
+    height: 10% ;
+    width: 100%;
+    font-size: 40px;
+    color: white;
+    font-family: Cambria ;
+    text-align: center;
+    background-image: url(./bande_noir.jpeg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#cpt{
+    font-size: 50px;
+    font-family: Cambria ;
+    text-align: center;
+    color :black;
+}
+#image1{
+    float:left;
+    width: 10%;
+    height: 100% ;
+}
+#image2{
+    float:right;
+    width: 10%;
+    height: 100% ;
+}
+label{
+    font-size: 50px;
+    font-family: Cambria ;
+    float:center;
+    text-align: center;
+    color :black;
+}
+input{
+    font-size: 50px;
+    font-family: Cambria ;
+    color :black;
+}
+.barre{
+    color:white;
+    text-decoration:none;
+    font-family: Cambria ;
+}
+.barre:hover,#titre:hover {
+    color:white;
+    text-decoration:none;
+    font-family: Cambria ;
+    }
+#titre{
+    color:black;
+    text-decoration:none;
+    font-family: Cambria ;
+}
+#event
+{
+    color:white;
+    font-family: 'Franklin Gothic Medium';
+    text-align: center;
+    font-size: 30px;
+}
+.info{
+    color:white;
+    font-size: 50px;
+    text-decoration:none;
+    font-family: 'Franklin Gothic Medium' ;
+    text-align: center;
+}
+p{
+
+    padding: 0%;
+    margin: 0%;
+}
+.contact{
+    color: white;
+    font-size: 50px;
+    font-family: Cambria ;
+    text-align: center;
+    text-decoration: underline;
+    padding: 0%;
+    margin: 0%;
+}
+h2{
+    color: white;
+    font-size: 50px;
+    font-family: Cambria ;
+    text-align: center;
+    padding: 0%;
+    margin: 0%;
+}

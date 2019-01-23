@@ -12,7 +12,11 @@
                     <td><a class="barre" href="./LogIn.php">Connexion</a></td>
                     <td><a class="barre" href="./Event.php">Evenements</td>
                     <td><a class="barre" href="./CreateEvent.php">Creer un évènement</td>
-                    <?php if($_SESSION['LoggedIn']==1){include('./DecoButton.php');}?>
+                    <?php if($_SESSION['LoggedIn']==1){
+                        include('./DecoButton.php');
+                        include('./ProfilButton.php');
+                    }
+                    ?>
                 </tr>
             </table>
             <img id="image1" src="./bande_noir.jpeg">

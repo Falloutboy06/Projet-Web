@@ -1,15 +1,5 @@
 <html>
-    <?php session_start();
-        try {
-            $bdd= new PDO('mysql:host=localhost;dbname=projet_web;charset=utf8','root','');
-        }
-        catch(Exception $e) {
-            die('Erreur:'.$e->getMessage());
-        }  
-        $SQL ="SELECT event.ID_Festival as IDF,event.Titre as Titre,user.name as createur,user.mail as email,event.Festival as Fest,event.DateDebut as DD, 
-                      event.DateFin as DF,event.Info as Info FROM event INNER JOIN user ON ID_Crea = user.userID";
-        $reponse=$bdd->query("$SQL");
-        ?>
+    <?php session_start(); ?>
         <head>
             <title>Event Metal Fest</title>
             <link rel="stylesheet" href="Event.css">
@@ -22,7 +12,11 @@
                     <td><a class="barre" href="./LogIn.php">Connexion</a></td>
                     <td><a class="barre" href="./Event.php">Evenements</td>
                     <td><a class="barre" href="./CreateEvent.php">Creer un évènement</td>
-                    <?php if($_SESSION['LoggedIn']==1){include('./DecoButton.php');}?>
+                    <?php if($_SESSION['LoggedIn']==1){
+                        include('./DecoButton.php');
+                        include('./ProfilButton.php');
+                    }
+                    ?>
                 </tr>
             </table>
             <img class="image1" src="./bande_noir.jpeg">
@@ -30,9 +24,19 @@
             
             <div id="event">
                     <?php
-                    foreach($reponse as $row)
-                    {
-                        ?>
+                        try {
+                            $bdd= new PDO('mysql:host=localhost;dbname=projet_web;charset=utf8','root','');
+                            echo("BDD ouverte");
+                        }
+                        catch(Exception $e) {
+                            die('Erreur:'.$e->getMessage());
+                        }  
+                        $SQL ="SELECT event.ID_Festival as IDF,event.Titre as Titre,user.name as createur,user.mail as email,event.Festival as Fest,event.DateDebut as DD, 
+                                    event.DateFin as DF,event.Info as Info FROM event INNER JOIN user ON ID_Crea = user.userID";
+                        $reponse=$bdd->query("$SQL");
+                        foreach($reponse as $row)
+                        {
+                    ?>
                         <p>
                             <h2> ------------------------------------------------------------------------------ </h2></br>
                             <h2> Evenements </h2> <?php  echo $row['Titre'] ?></br>
@@ -43,7 +47,7 @@
                             <h2> Informations </h2> <?php  echo $row['Info'] ?></br>
                             <?php 
                                 $_SESSION['Email']=$row['email'];
-                                if($_SESSION['LoggedIn']==1){ ?> <a class="contact"href="./Contact.php">Contacter le createur </br> 
+                                if($_SESSION['LoggedIn']==1){ ?> <a class="contact" href="./Contact.php">Contacter le createur </br> 
                             <?php}?>
                         </p>
                     <?php
@@ -52,4 +56,4 @@
                     ?>
             </div>
         </body>
-</html>
+</html>       
