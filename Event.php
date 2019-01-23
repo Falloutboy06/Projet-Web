@@ -13,15 +13,15 @@
                     <td><a class="barre" href="./Event.php">Evenements</a></td>
                     <td><a class="barre" href="./CreateEvent.php">Creer un évènement</a></td>
                     <?php if($_SESSION['LoggedIn']==1){
-                        include('./DecoButton.php');
                         include('./ProfilButton.php');
+                        include('./DecoButton.php');
                     }
                     ?>
                 </tr>
             </table>
             <img class="image1" src="./bande_noir.jpeg">
             <img class="image2" src="./bande_noir.jpeg">
-            <div id="event">
+            <div >
                     <?php
                         try {
                             $bdd= new PDO('mysql:host=localhost;dbname=projet_web;charset=utf8','root','');
@@ -36,24 +36,24 @@
                         {
                     ?>
                         <p>
-                            <h2> ------------------------------------------------------------------------------ </h2></br>
-                            <h2> Evenements </h2> <?php  echo $row['Titre'] ?></br>
-                            <h2> Createur </h2> <?php echo $row['createur'] ?></br>
-                            <h2> Festival </h2> <?php echo $row['Fest'] ?></br>
-                            <h2> Date de Debut </h2> <?php  echo $row['DD'] ?></br>
-                            <h2> Date de Fin </h2> <?php  echo $row['DF'] ?></br>
-                            <h2> Informations </h2> <?php  echo $row['Info'] ?></br>
+                            <h2 class='info'> ------------------------------------------------------------------------------ </h2>
+                            <h2 class='TXT'> Evenements </h2> <h2 class='info'><?php  echo $row['Titre'] ?></h2>
+                            <h2 class='TXT'> Createur </h2> <h2 class='info'><?php echo $row['createur'] ?></h2>>
+                            <h2 class='TXT'> Festival </h2> <h2 class='info'><?php echo $row['Fest'] ?></h2>
+                            <h2 class='TXT'> Date de Debut </h2> <h2 class='info'><?php  echo $row['DD'] ?></h2>
+                            <h2 class='TXT'> Date de Fin </h2> <h2 class='info'><?php  echo $row['DF'] ?></h2>
+                            <h2 class='TXT'> Informations </h2> <h2 class='info'><?php  echo $row['Info'] ?></h2>
                             <?php 
-                                $SQL2 = "SELECT mail from user where userID=ID_crea";
-                                $reponse2=$bdd->query("$SQL2");
-                                $_SESSION['email']=$reponse2; 
+                                $_SESSION['email']=$row['email'];
                                 if($_SESSION['LoggedIn']==1){include('./ContactButton.php');}
                             ?>
-                            <h2> ------------------------------------------------------------------------------ </h2></br>
+                            <h2 class='info'> ------------------------------------------------------------------------------ </h2>
                         </p>
                     <?php
                     }
                     $reponse->closeCursor();
+                    
+
                     ?>
             </div>
         </body>

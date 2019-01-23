@@ -12,8 +12,9 @@
                     <td><a class="barre" href="./LogIn.php">Connexion</a></td>
                     <td><a class="barre" href="./Event.php">Evenements</td>
                     <td><a class="barre" href="./CreateEvent.php">Creer un évènement</td>
-                    <td><a class="barre"href="./Deconnexion.php">Deconnexion</td>
                     <td><a class="barre"href="./Profil.php">Mon profil</td>
+                    <td><a class="barre"href="./Deconnexion.php">Deconnexion</td>
+                    
                 </tr>
             </table>
             <img id="image1" src="./bande_noir.jpeg">

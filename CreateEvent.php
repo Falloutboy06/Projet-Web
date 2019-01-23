@@ -20,8 +20,8 @@
                     <td><a class="barre" href="./Event.php">Evenements</td>
                     <td><a class="barre" href="./CreateEvent.php">Creer un évènement</td>
                     <?php if($_SESSION['LoggedIn']==1){
-                        include('./DecoButton.php');
                         include('./ProfilButton.php');
+                        include('./DecoButton.php');
                     }
                     ?>
                 </tr>
@@ -51,11 +51,12 @@
                     $Dend=$_POST['DateFin'];
                     $info=$_POST['info'];
 
-                    $sql = "SELECT Titre FROM event WHERE Titre='".$Titre."'";
+                    $sql = "SELECT event.Titre FROM event WHERE Titre='".$Titre."'";
                     $reponse=$bdd->query($sql);
                     if($reponse->rowCount() == 0) 
                     {
-                        $sql3 = "INSERT INTO 'event'('ID_Festival', 'ID_Crea','Titre','Festival','DateDebut','DateFin','Info') VALUES (NULL,NULL,".$Titre.", ".$Fest.", ".$Dbegin.", ".$Dend.", ".$info.")";
+                        $sql3 = "INSERT INTO 'event'('ID_Festival', 'ID_Crea','Titre','Festival','DateDebut','DateFin','Info') 
+                            VALUES (NULL,NULL,".$Titre.", ".$Fest.", ".$Dbegin.", ".$Dend.", ".$info.")";
                         $bdd->exec($sql3); 
                         header("Location: Event.php");   
                     }

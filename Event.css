@@ -79,34 +79,30 @@ input{
     color:white;
     font-family: 'Franklin Gothic Medium';
     text-align: center;
-    font-size: 30px;
+    font-size: 60px;
 }
 .info{
     color:white;
-    font-size: 50px;
+    font-size: 60px;
     text-decoration:none;
     font-family: 'Franklin Gothic Medium' ;
     text-align: center;
 }
+.txt{
+    color:white;
+    font-size: 50px;
+    text-decoration:underline;
+    font-family: 'Franklin Gothic Medium' ;
+    text-align: center;
+}
 p{
-
     padding: 0%;
     margin: 0%;
 }
-.contact{
-    color: white;
+#contact{
+    color:white;
     font-size: 50px;
-    font-family: Cambria ;
+    text-decoration:underline;
+    font-family: 'Franklin Gothic Medium' ;
     text-align: center;
-    text-decoration: underline;
-    padding: 0%;
-    margin: 0%;
-}
-h2{
-    color: white;
-    font-size: 50px;
-    font-family: Cambria ;
-    text-align: center;
-    padding: 0%;
-    margin: 0%;
 }
