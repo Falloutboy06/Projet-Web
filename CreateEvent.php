@@ -55,7 +55,7 @@
                     $reponse=$bdd->query($sql);
                     if($reponse->rowCount() == 0) 
                     {
-                        $sql3 = "INSERT INTO 'event'('ID_Festival', 'ID_Crea','Titre','Festival','DateDebut','DateFin','Info') 
+                        $sql3 = "INSERT INTO 'event'('idfestival', 'idcrea','titre','festival','datedebut','datefin','info') 
                             VALUES (NULL,NULL,".$Titre.", ".$Fest.", ".$Dbegin.", ".$Dend.", ".$info.")";
                         $bdd->exec($sql3); 
                         header("Location: Event.php");   
