@@ -21,6 +21,10 @@
             </table>
             <img class="image1" src="./bande_noir.jpeg">
             <img class="image2" src="./bande_noir.jpeg">
+            <a href="https://www.hellfest.fr/" ><img id="LogoGauche1" src="./LogoHF.jpg"></a>
+            <a href="https://www.sylakopenair.com/"><img id="LogoGauche2" src="./LogoSLK.gif" ></a>
+            <a href="https://www.ragnaroek-festival.com/"><img id="LogoDroit1" src="./LogoRNG.gif" ></a>
+            <a href="https://www.emp-online.fr/"><img id="LogoDroit2" src="./LogoEMP.png"></a>
             <div >
                     <?php
                         try {
@@ -29,8 +33,8 @@
                         catch(Exception $e) {
                             die('Erreur:'.$e->getMessage());
                         }  
-                        $SQL ="SELECT event.ID_Festival as IDF,event.Titre as Titre,user.name as createur,user.mail as email,event.Festival as Fest,event.DateDebut as DD, 
-                                    event.DateFin as DF,event.Info as Info FROM event INNER JOIN user ON ID_Crea = user.userID";
+                        $SQL ="SELECT event.idfestival as IDF,event.titre as Titre,user.name as createur,user.mail as email,event.festival as Fest,event.datedebut as DD, 
+                                    event.datefin as DF,event.info as Info FROM event INNER JOIN user ON idcrea = user.userID";
                         $reponse=$bdd->query("$SQL");
                         foreach($reponse as $row)
                         {

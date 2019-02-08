@@ -37,11 +37,13 @@ h1{
     color :black;
 }
 #image1{
+    position : relative;
     float:left;
     width: 10%;
     height: 100% ;
 }
 #image2{
+    position : relative;
     float:right;
     width: 10%;
     height: 100% ;
@@ -97,4 +99,32 @@ h3:hover{
     text-align: center;
     padding: 0%;
     margin: 0%;
+}
+#LogoGauche1{
+    position : absolute;
+    top:500px;
+    left :0px;
+    width: 10%;
+    height: 10% ;
+}
+#LogoGauche2{
+    position : absolute;
+    top:650px;
+    left :0px;
+    width: 10%;
+    height: 10% ;
+}
+#LogoDroit1{
+    position : absolute;
+    top:500px;
+    right :0px;
+    width: 10%;
+    height: 10% ;
+}
+#LogoDroit2{
+    position : absolute;
+    top:650px;
+    right :0px;
+    width: 10%;
+    height: 10% ;
 }
